@@ -1,0 +1,26 @@
+#sidenav {
+    background: #5fac5f;
+    position: sticky;
+    top: 0;
+}
+
+#topTitleBar {
+
+    background-blend-mode: darken;
+}
+
+#about_content {
+    margin: 5%;
+}
+
+.nav-item-icon {
+    width: 3em;
+}
+
+.background-green-color {
+    background: #5fac5f;
+}
+
+.content_paragraph_size {
+    font-size: x-large;
+}

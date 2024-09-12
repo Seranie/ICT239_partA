@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block pageContent %}
+
+<div class="row">
+    <h1 class="background-green-color" id="topTitleBar"
+        style="background-image: url({{ url_for('static', filename='images/World-PNG-Transparent-Image.png') }})">About
+        us</h1>
+</div>
+
+<div class="row">
+    <div class="col px-5 py-3 background-green-color d-flex flex-column" id="about_content">
+        <img class="img-fluid m-auto p-1 bg-white rounded"
+             src="{{ url_for('static', filename='images/tagline-for-travel-agency.9f6d6ce0.jpg') }}"/>
+        <p class="m-3 text-center content_paragraph_size"> <b>Nothing soothes the soul like travel ... As on of Singapore's largest and oldest tour operators, we
+            understand your needs when it comes to mainstream destinations and exotic adventures. </b></p>
+    </div>
+</div>
+
+
+{% endblock %}
