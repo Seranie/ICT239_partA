@@ -1,12 +1,23 @@
 #sidenav {
-    background: #5fac5f;
     position: sticky;
     top: 0;
+}
+
+#sideNavContainer {
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
 }
 
 #topTitleBar {
 
     background-blend-mode: darken;
+}
+
+#submit_button{
+    background-color: #00a900;
+    border: none;
+    box-shadow: 0.1em 0.1em black;
 }
 
 #about_content {
@@ -18,9 +29,14 @@
 }
 
 .background-green-color {
-    background: #5fac5f;
+    background: #6caf6c;
 }
 
 .content_paragraph_size {
     font-size: x-large;
 }
+
+.form-label-x-margin{
+    margin: 0 0.5em 0 0.5em;
+}
+
