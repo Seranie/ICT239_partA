@@ -1,62 +1,63 @@
 {% extends 'index.html' %}
 
 {% block pageContent %}
-<div class="text-black mt-5 mx-1 p-2 background-green-color">
-    <form class="row row-cols-lg-4 align-items-center method=" get
-    ">
-    <div class="col-6 d-flex justify-content-lg-center">
-        <label class="form-label-x-margin" for="from_price">From $</label>
-        <input class="" name="from_price" type="text">
+<div class="text-black mt-5 p-2 green-background">
+    <form class="row row-cols-lg-4 align-items-center" method="get">
+        <div class="col-6 d-flex justify-content-lg-center">
+            <label class="form-label-x-margin" for="from_price">From $</label>
+            <input class="form-control" id="from_price" name="from_price" placeholder="0" type="text">
+        </div>
 
-    </div>
+        <div class="col-6 d-flex justify-content-lg-center">
+            <label class="form-label-x-margin" for="to_price">To $</label>
+            <input class="form-control" id="to_price" name="to_price" placeholder="500000" type="text">
 
-    <div class="col-6 d-flex justify-content-lg-center">
-        <label class="form-label-x-margin" for="to_price">To $</label>
-        <input class="" name="to_price" type="text">
+        </div>
 
-    </div>
+        <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
+            <label class="form-label-x-margin" for="country_selector">COUNTRY</label>
+            <select class="w-25" id="country_selector" name="country_selector">
+                <option value="all">All</option>
+                {% for country in countries %}
+                <option value="{{country}}">{{country}}</option>
+                {% endfor %}
+            </select>
 
-    <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
-        <label class="form-label-x-margin" for="country_selector">COUNTRY</label>
-        <select class="w-25" name="country_selector">
-            <option value="all">All</option>
-            {% for country in countries %}
-            <option value="{{country}}">{{country}}</option>
-            {% endfor %}
-        </select>
+        </div>
 
-    </div>
-
-    <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
-        <input class="text-white" id="submit_button" type="submit" value="SEARCH">
-    </div>
+        <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
+            <input class="text-white" id="submit_button" type="submit" value="SEARCH">
+        </div>
     </form>
 </div>
 
 <div class="row">
-    <p>Number of tours: {{ totalNumberOfTours }}</p>
+    <p>Number of tours: {{ tours|length }}</p>
 </div>
 
 <div class="row">
-    {% for tour in tours %}
-
-    <div class="card">
-        <img class="card-img-top" src="{{tour.imageSource}}">
-        <div class="card-body">
-            <h5 class="card-title"> {{tour.title}} </h5>
-            <p class="card-text">{{tour.information}}</p>
-            <p class="card-text">{{tour.description}}</p>
-            <h5>Schedule</h5>
-            <ol>
-                {% for schedule in tour.schedules %}
-                <li>
-                    <p>{{schedule.date}}</p>
-                    <p>Capacity: {{schedule.capacity}}</p>
-                    <p>Available: {{schedule.available}}</p>
-                </li>
-                {% endfor %}
-            </ol>
-            <button class="btn btn-success"></button>
+    {% for tour in tours.values() %}
+    <div class="col-lg-4 p-2">
+        <div class="card h-100">
+            <img class="card-img-top" src="{{tour.url}}">
+            <div class="card-body">
+                <h5 class="card-title"> {{tour.name}} </h5>
+                <p class="card-text">{{tour.days}}D/{{tour.nights}}N ${{tour.cost}}</p>
+                <p class="card-text">{{tour.description}}</p>
+                <h5>Schedule</h5>
+                <ol>
+                    {% for schedule in tour.schedule %}
+                    <li>
+                        <p>{{schedule.departureDate|formatdate}}</p>
+                        <p>Capacity: {{schedule.capacity}}</p>
+                        <p>Available: {{schedule.seatsAvailable}}</p>
+                    </li>
+                    {% endfor %}
+                </ol>
+                <div class="text-end">
+                <a class="btn btn-success" href="#">Book</a>
+                </div>
+            </div>
         </div>
     </div>
 
