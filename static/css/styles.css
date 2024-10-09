@@ -1,0 +1,65 @@
+.sidenavbar {
+    height: 100vh;
+    background: linear-gradient(#9eca9e, #349134), url(../images/World-PNG-Transparent-Image.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+}
+
+.sidenavbar-link {
+    font-size: 1.5em !important;
+    transition: all 0.4s;
+}
+
+.sidenavbar-link:hover {
+    background-color: #184618;
+}
+
+.topnavbar {
+    background-image: url(../images/World-PNG-Transparent-Image.png), linear-gradient(#9eca9e, #349134);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand {
+    font-size: 1.5em !important;
+}
+
+.bottom-border {
+    border-bottom: 2px groove white;
+}
+
+.about-background {
+    background-color: #5db75d;
+}
+
+.img-fluid {
+    max-width: 60%;
+    height: auto;
+}
+
+
+#submit_button {
+    background-color: #00a900;
+    border: none;
+    box-shadow: 0.1em 0.1em black;
+}
+
+#about_content {
+    margin: 5%;
+}
+
+.nav-item-icon {
+    width: 3em;
+}
+
+
+.content_paragraph_size {
+    font-size: x-large;
+}
+
+.form-label-x-margin {
+    margin: 0 0.5em 0 0.5em;
+}
+
