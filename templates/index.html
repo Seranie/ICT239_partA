@@ -12,10 +12,11 @@
             <div class="row">
                 <!--                Side nav bar-->
                 <div class="col-lg-2 sidenavbar fixed-top">
-                    <a class="navbar-brand bottom-border mx-auto text-center d-block text-white" href="#">SG Tours</a>
+                    <a class="navbar-brand mx-auto text-center d-block text-white bottom-border py-3" href="#">SG Tours</a>
+
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link sidenavbar-link text-white d-flex align-items-center" href="/about">
+                            <a class="nav-link sidenavbar-link text-white d-flex align-items-center my-3 ms-2" href="/about">
                                 <svg class="bi bi-person-vcard-fill me-2" fill="currentColor" height="1em"
                                      viewBox="0 0 16 16"
                                      width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +26,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link sidenavbar-link text-white d-flex align-items-center" href="/tours">
+                            <a class="nav-link sidenavbar-link text-white d-flex align-items-center my-3 ms-2" href="/tours">
                                 <svg class="bi bi-globe me-2" fill="currentColor" height="1em" viewBox="0 0 16 16"
                                      width="1em"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -36,10 +37,10 @@
                         </li>
                     </ul>
                 </div>
-                <!--                bottom nav bar-->
-                <div class="col-lg-10 ms-auto">
-                    <div class="row py-2 topnavbar text-white align-items-center">
-                        <h3 class="my-0"> {% block pageTitle %}ABOUT US{% endblock %}</h3>
+                <!--                top nav bar-->
+                <div class="col-lg-10 ms-auto topnavbar">
+                    <div class="row py-2 text-white align-items-center">
+                        <h3 class="my-0 col-lg-4"> {{ panel.upper() }}</h3>
                     </div>
                 </div>
             </div>

@@ -2,6 +2,11 @@ body {
     margin: 0.75em;
 }
 
+.bi {
+    height: 1em;
+    width: 1em;
+}
+
 .sidenavbar {
     height: 100vh;
     background: linear-gradient(#9eca9e, #349134), url(../images/World-PNG-Transparent-Image.png);
@@ -28,9 +33,10 @@ body {
 }
 
 .topnavbar {
-    background-image: url(../images/World-PNG-Transparent-Image.png), linear-gradient(#9eca9e, #349134);
+    background-image: url(../images/World-PNG-Transparent-Image.png), linear-gradient(rgba(128,170,132,255), rgba(40,102,69,255));
     background-blend-mode: darken;
     background-repeat: no-repeat;
+    position:static;
 }
 
 .navbar-brand {
@@ -42,7 +48,7 @@ body {
 }
 
 .green-background {
-    background-color: #5db75d;
+    background-color: rgba(128,170,132,255);
 }
 
 .img-fluid {

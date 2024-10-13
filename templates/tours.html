@@ -1,32 +1,60 @@
 {% extends 'index.html' %}
 
 {% block pageContent %}
+<{{ flash_message() }}
+
+
 <div class="text-black mt-5 p-2 green-background">
-    <form class="row row-cols-lg-4 align-items-center" method="get">
-        <div class="col-6 d-flex justify-content-lg-center">
-            <label class="form-label-x-margin" for="from_price">From $</label>
-            <input class="form-control" id="from_price" name="from_price" placeholder="0" type="text">
+    <form class="row align-items-center" method="get">
+
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-lg-center">
+            <div class="form-group row align-items-center flex-grow-1">
+                <div class="col-4 text-end">
+                    <label class="text-white" for="from_price">FROM $</label>
+                </div>
+                <div class="col-8">
+                    <input class="w-50" id="from_price" name="from_price" placeholder="{{from_price_placeholder}}"
+                           type="number">
+                </div>
+            </div>
         </div>
 
-        <div class="col-6 d-flex justify-content-lg-center">
-            <label class="form-label-x-margin" for="to_price">To $</label>
-            <input class="form-control" id="to_price" name="to_price" placeholder="500000" type="text">
-
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-lg-center">
+            <div class="form-group row align-items-center flex-grow-1">
+                <div class="col-4 text-end">
+                    <label class="text-white" for="to_price">TO $</label>
+                </div>
+                <div class="col-8">
+                    <input class="w-50" id="to_price" name="to_price" placeholder="{{to_price_placeholder}}"
+                           type="number">
+                </div>
+            </div>
         </div>
 
-        <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
-            <label class="form-label-x-margin" for="country_selector">COUNTRY</label>
-            <select class="w-25" id="country_selector" name="country_selector">
-                <option value="all">All</option>
-                {% for country in countries %}
-                <option value="{{country}}">{{country}}</option>
-                {% endfor %}
-            </select>
-
+        <div class="col-lg-3 col-md-4 col-6 d-flex justify-content-lg-center">
+            <div class="form-group row align-items-center flex-grow-1">
+                <div class="col-4 text-end flex-grow-1">
+                    <label class="text-white text-break" for="country"
+                           style="width: 100%; white-space: normal;">COUNTRY</label>
+                </div>
+                <div class="col-8 ">
+                    <select class="flex-grow-1" id="country" name="country">
+                        <option value="all">All</option>
+                        {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
         </div>
 
-        <div class="my-2 my-lg-0 col-6 d-flex justify-content-lg-center">
-            <input class="text-white" id="submit_button" type="submit" value="SEARCH">
+        <div class="col-lg-3 col-md-4 col-6 d-flex ms-md-auto">
+            <div class="form-group row align-items-center flex-grow-1">
+                <label class="text-white col-4" for="submit_button" style="visibility: hidden;"></label>
+                <div class="col-8">
+                    <input class="text-white" id="submit_button" type="submit" value="SEARCH">
+                </div>
+            </div>
         </div>
     </form>
 </div>
@@ -55,12 +83,11 @@
                     {% endfor %}
                 </ol>
                 <div class="text-end">
-                <a class="btn btn-success" href="#">Book</a>
+                    <a class="btn btn-success" href="#">Book</a>
                 </div>
             </div>
         </div>
     </div>
-
     {% endfor %}
 </div>
 
